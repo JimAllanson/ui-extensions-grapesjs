@@ -1,0 +1,23 @@
+{
+  "name": "dc-uiex-hello-world",
+  "version": "0.0.1",
+  "description": "A starter project",
+  "main": "index.html",
+  "scripts": {
+    "build": "$(npm bin)/parcel build --public-url '.' ./src/index.html",
+    "start": "./start.sh"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.7.2",
+    "babel-preset-es2015": "^6.24.1",
+    "parcel-bundler": "^1.12.4",
+    "sass": "^1.23.0",
+    "typescript": "^3.6.4"
+  },
+  "dependencies": {
+    "@types/node": "^12.11.1",
+    "dc-extensions-sdk": "^1.0.1"
+  }
+}

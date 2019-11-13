@@ -1,0 +1,1 @@
+{"version":3,"sources":["scss/main.scss"],"names":[],"mappings":"AAAA;EACE;;;AAEF;EACE;;AACA;EACE","file":"main.77bb5cfd.css","sourceRoot":"../src","sourcesContent":["input {\n  margin: 0px;\n}\n#error {\n  display: none;\n  &.show {\n    display: block;\n  }\n}"]}

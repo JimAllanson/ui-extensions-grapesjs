@@ -1,0 +1,9 @@
+input {
+  margin: 0px;
+}
+#error {
+  display: none;
+  &.show {
+    display: block;
+  }
+}
