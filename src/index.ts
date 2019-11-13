@@ -2,18 +2,27 @@ import { init } from 'dc-extensions-sdk';
 import * as grapesjs from 'grapesjs';
 import grapesjsPresetWebpage from 'grapesjs-preset-webpage';
 
+interface ContentModel {
+  html: string;
+  css: string;
+}
+
 (async () => {
   try {
-    var sdk = await init<string>();
+    const sdk = await init<ContentModel>();
+    const value = await sdk.field.getValue();
     console.log(grapesjsPresetWebpage);
 
     var editor = grapesjs.init({
+      components: value.html,
+      style: value.css,
+
       height: '100%',
       showOffsets: 1,
       noticeOnUnload: 0,
       storageManager: { autoload: 0 },
       container: '#gjs',
-      fromElement: true,
+      fromElement: false,
       plugins: [grapesjsPresetWebpage],
       pluginOpts: {
         'gjs-preset-webpage': {
@@ -22,7 +31,7 @@ import grapesjsPresetWebpage from 'grapesjs-preset-webpage';
       }
     });
 
-    var value = await sdk.field.getValue();
+    
     /*const field: HTMLInputElement = $('#field');
     if(value !== undefined) {
       field.value = value;
