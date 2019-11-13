@@ -19,6 +19,7 @@
   "dependencies": {
     "@types/node": "^12.11.1",
     "dc-extensions-sdk": "^1.0.1",
-    "grapesjs": "^0.15.8"
+    "grapesjs": "^0.15.8",
+    "grapesjs-preset-webpage": "^0.1.11"
   }
 }

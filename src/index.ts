@@ -1,10 +1,11 @@
 import { init } from 'dc-extensions-sdk';
-import { $ } from './bling';
-import * as grapesjs from 'grapesjs'
+import * as grapesjs from 'grapesjs';
+import grapesjsPresetWebpage from 'grapesjs-preset-webpage';
 
 (async () => {
   try {
     var sdk = await init<string>();
+    console.log(grapesjsPresetWebpage);
 
     var editor = grapesjs.init({
       height: '100%',
@@ -13,11 +14,16 @@ import * as grapesjs from 'grapesjs'
       storageManager: { autoload: 0 },
       container: '#gjs',
       fromElement: true,
-      plugins: [],
+      plugins: [grapesjsPresetWebpage],
+      pluginOpts: {
+        'gjs-preset-webpage': {
+          // options
+        }
+      }
     });
 
     var value = await sdk.field.getValue();
-    const field: HTMLInputElement = $('#field');
+    /*const field: HTMLInputElement = $('#field');
     if(value !== undefined) {
       field.value = value;
     }
@@ -26,10 +32,10 @@ import * as grapesjs from 'grapesjs'
         await sdk.field.setValue(value);
       } catch (e) {}
     };
-    field.on('keyup', _ => setContent(field.value));
+    field.on('keyup', _ => setContent(field.value));*/
   } catch (e) {
     console.log(e);
-    const error:HTMLHeadingElement = $('#error');
-    error.classList.add('show');
+    //const error:HTMLHeadingElement = $('#error');
+    //error.classList.add('show');
   }
 })();
