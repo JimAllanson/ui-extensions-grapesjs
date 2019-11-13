@@ -33,6 +33,18 @@ import grapesjsPresetWebpage from 'grapesjs-preset-webpage';
       } catch (e) {}
     };
     field.on('keyup', _ => setContent(field.value));*/
+    const setContent = async value => {
+      try {
+        await sdk.field.setValue(value);
+      } catch (e) { }
+    };
+
+    editor.on('update', obj => {
+      setContent({
+        html: editor.getHtml(),
+        css: editor.getCss()
+      });
+    });
   } catch (e) {
     console.log(e);
     //const error:HTMLHeadingElement = $('#error');
