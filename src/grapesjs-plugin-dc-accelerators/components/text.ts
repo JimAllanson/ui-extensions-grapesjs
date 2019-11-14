@@ -15,7 +15,7 @@ export default (editor, opts = {}) => {
         traits: [
           {
             type: 'text',
-            name: 'contentId',
+            name: 'content-id',
             label: 'Amplience Dynamic Content ID'
           },
           {
