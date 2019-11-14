@@ -1,6 +1,6 @@
 import { SdkManager } from "~dc-sdk";
 
-const TYPE = 'amp-dc-card';
+const TYPE = 'amp-card';
 
 export default (editor, opts = {}) => {
   const options = { ...{
