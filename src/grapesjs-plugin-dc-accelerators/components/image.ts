@@ -19,14 +19,10 @@ export default (editor, opts = {}) => {
           }
         ],
       },
-      isComponent: el => {
-        debugger;
-          if (el.tagName === TYPE) {
-            const result = { type: TYPE };
-            return result;
-          }
-        },
-    }
+    },
+    isComponent: el => {
+      return (el.tagName.toLowerCase() === TYPE);
+    },
   });
 
   editor.BlockManager.add(TYPE, {

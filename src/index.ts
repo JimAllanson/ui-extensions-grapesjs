@@ -2,15 +2,13 @@ import { init } from 'dc-extensions-sdk';
 import * as grapesjs from 'grapesjs';
 import grapesjsPresetWebpage from 'grapesjs-preset-webpage';
 import dcAcceleratorPlugin from './grapesjs-plugin-dc-accelerators'
-
-interface ContentModel {
-  html: string;
-  css: string;
-}
+import { SdkManager } from '~dc-sdk';
 
 (async () => {
   try {
-    const sdk = await init<ContentModel>();
+    await SdkManager.init();
+    const sdk = SdkManager.sdk;
+    //sdk.contentLink.get(['https://raw.githubusercontent.com/neilmistryamplience/dc-example-website/willow/content-types/image.json']).then((content) => { console.log(content) });
     
     console.log(grapesjsPresetWebpage);
 

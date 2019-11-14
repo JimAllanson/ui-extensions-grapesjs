@@ -1,3 +1,4 @@
+import { SdkManager } from "~dc-sdk";
 
 const TYPE = 'amp-dc-text';
 
@@ -16,17 +17,23 @@ export default (editor, opts = {}) => {
             type: 'text',
             name: 'contentId',
             label: 'Amplience Dynamic Content ID'
+          },
+          {
+            type: 'button',
+            text: 'Select Content...',
+            full: true,
+            command: async editor => {
+              const item = await SdkManager.getContent(['https://raw.githubusercontent.com/neilmistryamplience/dc-example-website/willow/content-types/text.json']);
+              const component = editor.getSelected();
+              component.getTrait('content-id').setTargetValue(item.id);
+            }
           }
         ],
-      },
-      isComponent: el => {
-        debugger;
-          if (el.tagName === TYPE) {
-            const result = { type: TYPE };
-            return result;
-          }
-        },
-    }
+      }
+    },
+    isComponent: el => {
+      return (el.tagName.toLowerCase() === TYPE);
+    },
   });
 
   editor.BlockManager.add(TYPE, {
