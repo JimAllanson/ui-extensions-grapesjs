@@ -19,10 +19,20 @@ export default (editor, opts = {}) => {
           }
         ],
       },
+<<<<<<< HEAD
     },
     isComponent: el => {
       return (el.tagName.toLowerCase() === TYPE);
     },
+=======
+      isComponent: el => {
+          if (el.tagName === TYPE.toUpperCase()) {
+            const result = { type: TYPE };
+            return result;
+          }
+        },
+    }
+>>>>>>> b799790e36bb0f7cec24d8cdd8a68d28c70c9aa6
   });
 
   editor.BlockManager.add(TYPE, {
