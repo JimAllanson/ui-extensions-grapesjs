@@ -11,12 +11,13 @@ export default (editor, opts = {}) => {
   editor.DomComponents.addType(TYPE, {
     model: {
       defaults: {
-        tagName: TYPE,
-        contentId: '',
+        tagName: 'img',
+        amplienceImageUrl: true,
+        src: '',
         traits: [
           {
             type: 'text',
-            name: 'image-url',
+            name: 'src',
             label: 'URL for selected image'
           },
           {
@@ -28,14 +29,15 @@ export default (editor, opts = {}) => {
               const component = editor.getSelected();
               console.log(item);
               const dynamicUrl = `https://${item.defaultHost}/i/${item.endpoint}/${item.name}`;
-              component.getTrait('image-url').setTargetValue(dynamicUrl);
+              component.getTrait('src').setTargetValue(dynamicUrl);
             }
           }
         ],
       },
     },
     isComponent: el => {
-      return (el.tagName.toLowerCase() === TYPE);
+      debugger;
+      return el.hasAttribute('amplienceImageUrl')
     },
   });
 
@@ -43,15 +45,7 @@ export default (editor, opts = {}) => {
     label: 'Image URL',
     category: 'Amplience',
     content: {
-      type: TYPE,
-      content: `<span>«${TYPE}»</span>`,
-      style: {
-        display: 'block',
-        background: '#ccc',
-        padding: '5vh',
-        'font-size': '48px',
-        'min-height': '40vh'
-      }
+      type: TYPE
     }
   });
 
