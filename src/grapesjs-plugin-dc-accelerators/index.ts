@@ -3,6 +3,7 @@ import banner from './components/banner';
 import image from './components/image';
 import text from './components/text';
 import card from './components/card';
+import cardList from './components/cardList';
 
 export default (editor, opts = {}) => {
   const options = { ...{
@@ -13,4 +14,5 @@ export default (editor, opts = {}) => {
   image(editor, opts);
   text(editor, opts);
   card(editor, opts);
+  cardList(editor, opts);
 };
