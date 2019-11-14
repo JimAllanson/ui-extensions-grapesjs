@@ -45,7 +45,6 @@ export default (editor, opts = {}) => {
       style: {
         display: 'block',
         padding: '5vh',
-        'font-size': '48px',
       }
     },
   });
