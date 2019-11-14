@@ -36,6 +36,7 @@ export default (editor, opts = {}) => {
       },
     },
     isComponent: el => {
+      debugger;
       return el.hasAttribute('amplienceImageUrl')
     },
   });
@@ -44,7 +45,10 @@ export default (editor, opts = {}) => {
     label: 'Image URL',
     category: 'Amplience',
     content: {
-      type: TYPE
+      type: TYPE,
+      attributes: {
+        amplienceImageUrl: true
+      }
     }
   });
 
