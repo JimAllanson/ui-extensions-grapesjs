@@ -1,6 +1,6 @@
 import { init } from 'dc-extensions-sdk';
 import { SdkManager } from '~dc-sdk';
-const TYPE = 'amp-dc-banner';
+const TYPE = 'amp-banner';
 
 export default (editor, opts = {}) => {
   const options = { ...{

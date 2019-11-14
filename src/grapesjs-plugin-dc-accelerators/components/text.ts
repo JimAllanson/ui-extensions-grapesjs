@@ -1,6 +1,6 @@
 import { SdkManager } from "~dc-sdk";
 
-const TYPE = 'amp-dc-text';
+const TYPE = 'amp-text';
 
 export default (editor, opts = {}) => {
   const options = { ...{
