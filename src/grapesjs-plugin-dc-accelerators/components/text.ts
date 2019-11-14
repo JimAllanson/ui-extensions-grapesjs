@@ -20,8 +20,7 @@ export default (editor, opts = {}) => {
         ],
       },
       isComponent: el => {
-        debugger;
-          if (el.tagName === TYPE) {
+          if (el.tagName === TYPE.toUpperCase()) {
             const result = { type: TYPE };
             return result;
           }
