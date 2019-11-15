@@ -23,7 +23,7 @@ export default (editor, opts = {}) => {
             text: 'Select Content...',
             full: true,
             command: async editor => {
-              const item = await SdkManager.getContent(['https://raw.githubusercontent.com/neilmistryamplience/dc-example-website/willow/content-types/cardlist.json']);
+              const item = await SdkManager.getContent(['https://raw.githubusercontent.com/neilmistryamplience/dc-example-website/willow/content-types/cardList.json']);
               const component = editor.getSelected();
               component.getTrait('content-id').setTargetValue(item.id);
             }
@@ -32,7 +32,11 @@ export default (editor, opts = {}) => {
       },
     },
     isComponent: el => {
-      return (el.tagName.toLowerCase() === TYPE);
+      try {
+        return (el.tagName.toLowerCase() === TYPE);
+      } catch(e) {
+        return false;
+      }
     },
   });
 

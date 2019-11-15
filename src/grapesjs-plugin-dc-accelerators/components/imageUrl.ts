@@ -36,7 +36,11 @@ export default (editor, opts = {}) => {
       },
     },
     isComponent: el => {
-      return el.hasAttribute('amplienceImageUrl')
+      try {
+        return el.hasAttribute('amplienceImageUrl')
+      } catch(e) {
+        return false;
+      }
     },
   });
 

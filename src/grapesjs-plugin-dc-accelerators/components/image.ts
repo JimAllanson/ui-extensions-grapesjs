@@ -34,7 +34,11 @@ export default (editor, opts = {}) => {
       },
     },
     isComponent: el => {
-      return (el.tagName.toLowerCase() === TYPE);
+      try {
+        return (el.tagName.toLowerCase() === TYPE);
+      } catch(e) {
+        return false;
+      }
     },
   });
 
