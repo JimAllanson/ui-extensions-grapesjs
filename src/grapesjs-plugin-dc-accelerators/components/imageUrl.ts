@@ -48,7 +48,10 @@ export default (editor, opts = {}) => {
     label: 'Image URL',
     category: 'Amplience',
     content: {
-      type: TYPE
+      type: TYPE,
+      attributes: {
+        amplienceImageUrl: true
+      }
     }
   });
 
