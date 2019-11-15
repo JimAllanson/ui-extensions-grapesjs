@@ -36,7 +36,6 @@ export default (editor, opts = {}) => {
       },
     },
     isComponent: el => {
-      debugger;
       return el.hasAttribute('amplienceImageUrl')
     },
   });
